@@ -1,10 +1,10 @@
 <script lang="ts">
-	let { children, gap = 0 } = $props();
+	let { children, gap = 0, component = 'div' } = $props();
 </script>
 
-<div class="stack" style={`--stack-gap: ${gap}px;`}>
+<svelte:element this={component} class="stack" style={`--stack-gap: ${gap}px;`}>
 	{@render children()}
-</div>
+</svelte:element>
 
 <style lang="scss">
 	.stack {
